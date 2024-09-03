@@ -2,6 +2,7 @@ import clsx from "clsx";
 import Card from "../../ui/Card";
 import { BsClock, BsClockHistory } from "react-icons/bs";
 import { TbClock12 } from "react-icons/tb";
+import Caraousel from "../../ui/Caraousel";
 export const Content = () => {
   const activities = [
     {
@@ -70,6 +71,7 @@ export const Content = () => {
           ))}
         </div>
       </section>
+      <Caraousel/>
     </main>
   );
 };
