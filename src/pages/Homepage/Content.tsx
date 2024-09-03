@@ -1,27 +1,8 @@
 import clsx from "clsx";
 import Card from "../../ui/Card";
-import { BsClock, BsClockHistory } from "react-icons/bs";
-import { TbClock12 } from "react-icons/tb";
 import Caraousel from "../../ui/Caraousel";
+import { activities, carouselData, users } from "../../data";
 export const Content = () => {
-  const activities = [
-    {
-      icon: <BsClock className="text-2xl text-red-500" />,
-      time: "10.00",
-      info: "Check in",
-    },
-    {
-      icon: <TbClock12 className="text-2xl text-red-500" />,
-      time: "03:00:00",
-      info: "Working hours",
-    },
-    {
-      icon: <BsClockHistory className="text-2xl text-red-500" />,
-      time: "---:---",
-      info: "Check out",
-    },
-  ];
-
   return (
     <main className="container py-6">
       <p>Hi, Good morning !</p>
@@ -71,7 +52,36 @@ export const Content = () => {
           ))}
         </div>
       </section>
-      <Caraousel/>
+
+      <Caraousel carouselData={carouselData} />
+
+      <section className="mt-8">
+        <h2 className="text-lg font-bold">Today's activity</h2>
+        <Card bg="white">
+          <div className={`grid grid-cols-8`}>
+            {users.map((user, idx) => {
+              return (
+                <div
+                  key={idx}
+                  className="flex flex-col items-center gap-[-20px]"
+                >
+                  <img
+                    src={user.src}
+                    className="rounded-full "
+                    width="40"
+                    alt={`user-${idx + 1}`}
+                  />
+                  <p className="text-[8px] font-bold">{user.name}</p>
+                  <p className="text-[8px]">{user.city}</p>
+                </div>
+              );
+            })}
+            <button className="text-[8px] font-bold w-[40px] h-[40px] rounded-full bg-red-500 text-center text-white flex justify-center items-center cursor-pointer">
+              10 more
+            </button>
+          </div>
+        </Card>
+      </section>
     </main>
   );
 };

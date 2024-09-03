@@ -1,35 +1,22 @@
 // Import Swiper React components
-import { Swiper, SwiperSlide} from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 
-const Caraousel = () => {
-  const carouselData = [
-    {
-      src: "https://randomuser.me/api/portraits/med/men/72.jpg",
-      name: "Thor",
-      comment:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam nobis illo eum laborum hic, facilis quidem quae ducimus officia,",
-    },
-    {
-      src: "https://randomuser.me/api/portraits/med/men/75.jpg",
-      name: "Hulk",
-      comment:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam nobis illo eum laborum hic, facilis quidem quae ducimus officia,",
-    },
-    {
-      src: "https://randomuser.me/api/portraits/med/men/76.jpg",
-      name: "Captain America",
-      comment:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam nobis illo eum laborum hic, facilis quidem quae ducimus officia,",
-    },
-  ];
+type CarouselData = {
+  src: string;
+  name: string;
+  comment: string;
+};
+type CarouselProps = {
+  carouselData: CarouselData[];
+};
 
-
+const Caraousel = ({ carouselData }: CarouselProps) => {
   return (
-    <section className="my-8">
+    <section className="mt-8">
       <Swiper
         slidesPerView={2}
         spaceBetween={30}

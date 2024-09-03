@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 body {
   background-color: #eee;
 }
@@ -12,7 +10,6 @@ body {
   max-width: 480px;
   margin: auto;
   font-family: "Inter", sans-serif;
-  min-height: 100vh;
   background: white;
 }
 
