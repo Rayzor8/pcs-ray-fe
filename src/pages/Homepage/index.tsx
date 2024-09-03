@@ -1,7 +1,15 @@
-import React from "react";
+import { Content } from "./Content";
+import Footer from "./Footer";
+import Header from "./Header";
 
 const Homepage = () => {
-  return <h1 className="text-3xl font-bold underline">Homepage</h1>;
+  return (
+    <>
+      <Header />
+      <Content />
+      <Footer />
+    </>
+  );
 };
 
 export default Homepage;
